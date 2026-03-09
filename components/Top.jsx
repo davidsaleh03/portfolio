@@ -8,10 +8,10 @@ const Header = ({setModal}) => {
           <img src='/logoActual.png' className='logo__act' alt="" />
         </div>
         <div className="right__section">
-            <h1 onClick={() => setModal(true)}>About</h1>
-            <h1>Stack</h1>
-            <h1>Projects</h1>
-            <h1>Contact</h1>
+            <h1 className='click' onClick={() => setModal(true)}>About</h1>
+            <h1 className='click' onClick={() => setModal(true)}>Stack</h1>
+            <h1 className='click'>Projects</h1>
+            <h1 className='click' onClick={() => setModal(true)}>Contact</h1>
         </div>
     </div>
     </>
