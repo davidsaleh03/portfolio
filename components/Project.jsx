@@ -19,10 +19,10 @@ const Project = () => {
                   InstaWeather is a modern weather application designed to provide accurate, real-time weather data for any city in the world. The app offers users a comprehensive view of current weather conditions, detailed forecasts, and astronomical data in a clean, intuitive interface.
                 </p>
                 <div className="project__description--links">
-                  <a href="#" className="project__description--link">
+                  <a href="#" className="project__description--link click">
                     <FaGithub />
                   </a>
-                  <a href="#" className="project__description--link">
+                  <a href="#" className="project__description--link click">
                     <FaLink />
                   </a>
                 </div>
@@ -44,10 +44,10 @@ const Project = () => {
                   This project is a fully functional Instagram-inspired social media platform that replicates many of the core features of the original application. The goal of the project was to design and build a scalable, user-focused platform that allows users to create accounts, interact with content, and explore posts from other users in a familiar social media experience.
                 </p>
                 <div className="project__description--links">
-                  <a href="#" className="project__description--link">
+                  <a href="#" className="project__description--link click">
                     <FaGithub />
                   </a>
-                  <a href="#" className="project__description--link">
+                  <a href="#" className="project__description--link click">
                     <FaLink />
                   </a>
                 </div>
@@ -69,10 +69,10 @@ const Project = () => {
                   This project is a fully functional Amazon-inspired e-commerce web application that replicates several of the core features of a modern online shopping platform. The goal of the project was to build a scalable, user-friendly marketplace where users can browse products, manage their shopping cart, and simulate the online purchasing experience.
                 </p>
                 <div className="project__description--links">
-                  <a href="#" className="project__description--link">
+                  <a href="#" className="project__description--link click">
                     <FaGithub />
                   </a>
-                  <a href="#" className="project__description--link">
+                  <a href="#" className="project__description--link click">
                     <FaLink />
                   </a>
                 </div>
@@ -94,10 +94,10 @@ const Project = () => {
                   This project is a Netflix-inspired streaming platform clone designed to replicate the core user experience of a modern video streaming service. The application allows users to browse movies and shows, explore categorized content, and view detailed media information within a sleek, entertainment-focused interface.
                 </p>
                 <div className="project__description--links">
-                  <a href="#" className="project__description--link">
+                  <a href="#" className="project__description--link click">
                     <FaGithub />
                   </a>
-                  <a href="#" className="project__description--link">
+                  <a href="#" className="project__description--link click">
                     <FaLink />
                   </a>
                 </div>

@@ -23,13 +23,13 @@ const Introduction = () => {
     </div>
       <p className='intro__para'>I am a passionate Frontend Software Engineer dedicated to crafting engaging, high-performance web applications. I focus on creating seamless user experiences by combining clean code, thoughtful design, and modern web technologies.</p>
       <div className="links__top">
-        <div className="link__top">
+        <div className="link__top click">
             <FaLinkedinIn className='link__icon'/>
         </div>
-        <div className="link__top">
+        <div className="link__top click">
             <FaGithub className='link__icon'/>
         </div>
-        <div className="link__top">
+        <div className="link__top click">
             <FaFileAlt className='link__icon'/>
         </div>
       </div>

@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-main {
-
+html {
+    scroll-behavior: smooth;
 }
 
 .background__video {
@@ -154,8 +154,8 @@ main {
 }
 
 .picture__wrapper {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
 }
 
 .picture__wrapper img {
@@ -539,6 +539,7 @@ transform: translate(0%) !important;
 }
 
 .modal__right{
+  position: relative;
   padding: 24px;
   height: 600px;
   width: 400px;
@@ -556,8 +557,54 @@ box-shadow:
   transition: transform 300ms ease-in;
 }
 
+.success__part {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkmark__icon {
+  font-size: 64px;
+  color: rgb(8, 160, 8);
+  margin-bottom: 12px;
+}
+
+.success__message {
+  font-size: 22px;
+  color: white;
+  font-weight: 100;
+  text-align: center;
+}
+
 .form__item {
     margin-bottom: 20px;
+}
+
+.loading__icon {
+  font-size: 64px;
+  color: white;
+  animation: swirls 1000ms infinite;
+}
+
+.loading__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes swirls {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+transform: rotate(360deg)
+  }
 }
 
 .form__submit {
@@ -681,6 +728,12 @@ box-shadow:
     width: 100%;
 }
 
+@media (max-width: 1260px) {
+.picture__wrapper {
+  width: 200px;
+  height: 200px;
+}
+}
 
 @media (max-width: 1126px) {
   .intro__para {
@@ -729,6 +782,9 @@ box-shadow:
     margin-right: 0px;
     width: 300px;
     margin-bottom: 24px;
+  }
+  .scroll {
+    display: none;
   }
 }
 

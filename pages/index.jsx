@@ -6,13 +6,18 @@ import Project from "@/components/Project";
 import Footer from "@/components/Footer";
 import emailjs from "@emailjs/browser";
 import { IoMdClose } from "react-icons/io";
+import { IoIosCheckmarkCircle } from "react-icons/io";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 
 export default function Home() {
   const [modal, setModal] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   function contact(event) {
     event.preventDefault();
+    setLoading(true)
     emailjs
       .sendForm(
         "service_aahskhi",
@@ -21,9 +26,8 @@ export default function Home() {
         "Icp1xk9l7iS3qDKbA",
       )
       .then(() => {
-        success.classList += " modal__overlay--visible";
+        setSuccess(true);
       })
-      .catch(() => {});
   }
 
   useEffect(() => {
@@ -66,7 +70,7 @@ export default function Home() {
           <Project />
         </section>
         <section id="backToTop" className={`${modal && "visible"}`}>
-          <h1 className="toTop__title">Back to The top</h1>
+          <a href='#intro' className="toTop__title click">Back to The top</a>
         </section>
       </main>
       <Footer
@@ -150,14 +154,31 @@ export default function Home() {
               <figure className="modal__language">
                 <img
                   className="modal__language--img"
-                  src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3NTc3Nzc3OC83Nzc3NzA1Kzc3Kzc3NTc3NzcyMjI3NzU1NTI4Nzc2Nzc1Nf/AABEIABwAHAMBEQACEQEDEQH/xAAYAAADAQEAAAAAAAAAAAAAAAAFBgcIAv/EADEQAAECBAQEBAQHAAAAAAAAAAECAwQFERIABhMhFDFBUQcVYaEWInGBMjM0QnKisf/EABoBAAMAAwEAAAAAAAAAAAAAAAMEBQECBgD/xAAnEQABAwMDAwQDAAAAAAAAAAABAAIDBBESBRMhMUFRFCKh0XHB8P/aAAwDAQACEQMRAD8AQsk5Rh5rCGYTIrLJUUtNINLqcyT9f8wjU1JYcWrn9W1Z9O/Zh69yi858Nm3lwy5KtTQW6lDyHDcEJP7x127YHFWnnNaUOryOBE/Pj6TXD+E+XHYHQIig9b+p1fmr3p+H2wD10t7pqKtmc656KM5ilD0hncXK4lQW5DOW3gUChSoP3BBxWjeJGBw7quxwc0OCdvDGbrcaVKVw7q0tqK0OoTVKQeiu29aYQrYuc7rmtbohuCcOHPb6R/OOcHstvQbMPBOqKnErcccSUoWgHdCT1Pr09a4FT0wlBJK9ptC2Vpc4qgszdLch818vmFNO/heHOvyrS3v98K7fvxuP0nY4sTjdZrzLOHZ/PYyavIDaoly4IBrakABIr1oAN8XYoxGwNHZV2NwaGqn+FCIdWXQWaausrWpzu6e1MTK2+7yuX1ZrzV+7pYW/vynePblaUQHm+lTjGuG1KfnV+WnrzwszPnHx8ItIx/OPj4TONsBTizH4j8J8cTjgLNHX3s5X0F/9rsX6a+y3JVYb7YuhMonExkz5flkW5DrUKKt3CvqDscEfGyQWcLr0sMcos8XXc5ns0njqHJrGuRBbFEBVAlPeiRsMYjiZGLNFlmOJkQswWRP49zVwHBedROjbbXa+n86Xe+NPTQ3yxWNmO97JbwdFX//Z"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Ionicons_logo-vercel.svg/640px-Ionicons_logo-vercel.svg.png"
                   alt=""
                 />
-                <span className="language__name">GSAP</span>
+                <span className="language__name">Vercel</span>
               </figure>
             </div>
           </div>
           <div className={`modal__right ${modal ? "right__open" : ""}`}>
+            {loading ?
+             <>
+             {
+              success 
+              ?
+              <div className='success__part'>
+              <IoIosCheckmarkCircle className='checkmark__icon'/>
+              <h1 className='success__message'>Hi! I’m so happy you reached out. Thanks for connecting with me! Talk soon!</h1>
+              </div>
+              :
+              <div className="loading__container">
+                <AiOutlineLoading3Quarters className='loading__icon'/>
+              </div>
+}
+             </>
+             :
+              <>
             <h1 className="right__title">Let's Have a Chat!</h1>
             <h1 className="right__para">
               I'm currently open to new opportunites.
@@ -191,6 +212,7 @@ export default function Home() {
                 Send it my way
               </button>
             </form>
+            </>}
             <IoMdClose className='close click' onClick={() => setModal(false)}/>
           </div>
         </div>
