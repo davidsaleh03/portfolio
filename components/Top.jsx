@@ -10,7 +10,7 @@ const Header = ({setModal}) => {
         <div className="right__section">
             <h1 className='click' onClick={() => setModal(true)}>About</h1>
             <h1 className='click' onClick={() => setModal(true)}>Stack</h1>
-            <a href='#projects'className='click'>Projects</a>
+            <a href='#projects'className='right__section-h1 click'>Projects</a>
             <h1 className='click' onClick={() => setModal(true)}>Contact</h1>
         </div>
     </div>

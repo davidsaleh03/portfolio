@@ -8,6 +8,8 @@ import emailjs from "@emailjs/browser";
 import { IoMdClose } from "react-icons/io";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { IoIosMail } from "react-icons/io";
+
 
 
 export default function Home() {
@@ -31,18 +33,19 @@ export default function Home() {
   }
 
   useEffect(() => {
-    if (modal) {
-      document.documentElement.style.overflow = "hidden";
-      document.body.style.overflow = "hidden";
-    } else {
-      document.documentElement.style.overflow = "auto";
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.documentElement.style.overflow = "auto";
-      document.body.style.overflow = "auto";
-    };
-  }, [modal]);
+  if (modal && window.innerWidth > 834) {
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+  } else {
+    document.documentElement.style.overflow = "auto";
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.documentElement.style.overflow = "auto";
+    document.body.style.overflow = "auto";
+  };
+}, [modal]);
 
   return (
     <>
@@ -64,6 +67,9 @@ export default function Home() {
           <a href="#projects" class="scroll">
             <div class="scroll__icon click"></div>
           </a>
+          <button className="mail__btn click" onClick={() => setModal(true)}>
+            <IoIosMail className='mail'/>
+            </button>
         </section>
         <section id="projects" className={`${modal && "visible"}`}>
           <h1 className="projects__title">Here are some of my projects</h1>
@@ -160,6 +166,7 @@ export default function Home() {
                 <span className="language__name">Vercel</span>
               </figure>
             </div>
+            <IoMdClose className='close-2 click' onClick={() => setModal(false)}/>
           </div>
           <div className={`modal__right ${modal ? "right__open" : ""}`}>
             {loading ?

@@ -24,10 +24,11 @@ html {
 
 #intro {
   margin: 32px 64px;
-  height: 100vh;
   z-index: 100;
+  height: 100vh;
   position: relative;
 }
+
 
 .logo {
   width: 100px;
@@ -206,6 +207,12 @@ html {
 .right__section h1 {
   color: white;
   cursor: pointer;
+}
+
+.right__section-h1 {
+  color: white;
+  cursor: pointer;
+  margin-right: 48px;
 }
 
 .glass {
@@ -490,6 +497,7 @@ transform: translate(0%) !important;
 }
 
 .modal__left {
+  position: relative;
   padding: 28px 24px;
   height: 600px;
   width: 400px;
@@ -649,11 +657,11 @@ transform: rotate(360deg)
 }
 
 .click:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) !important;
 }
 
 .click:active {
-    transform: scale(0.8);
+    transform: scale(0.8) !important;
 }
 
 .here {
@@ -728,6 +736,64 @@ transform: rotate(360deg)
     width: 100%;
 }
 
+.mail__btn {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+      background: rgba(10, 25, 50, 0.4);
+backdrop-filter: blur(18px) saturate(180%);
+-webkit-backdrop-filter: blur(18px) saturate(180%);
+
+border: 1px solid rgba(20, 50, 100, 0.4); 
+
+box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1), 
+    0 8px 24px rgba(0, 0, 20, 0.6); 
+    color: white;
+    position: absolute;
+    bottom: 50px;
+    right: 40px;
+}
+
+.close-2 {
+  display: none;
+}
+
+@media( max-width: 740px) {
+  .mail__btn {
+    right: 10px;
+  }
+}
+
+@media (max-width: 545px) {
+  .mail__btn {
+    width: 60px;
+    height: 60px;
+  }
+  .mail {
+    font-size: 40px;
+  }
+}
+
+.mail {
+  font-size: 60px;
+  animation: effect 1000ms ease infinite alternate-reverse;
+}
+
+@keyframes effect {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+transform: scale(0.8);
+  }
+}
+
 @media (max-width: 1260px) {
 .picture__wrapper {
   width: 200px;
@@ -752,6 +818,48 @@ transform: rotate(360deg)
   }
   .intro__title {
     font-size: 80px;
+  }
+}
+
+@media (max-width: 834px) {
+  .footer__link:not(:last-child) {
+    margin-right: 20px;
+  }
+ .modal {
+  top: unset;
+  left: unset;
+  transform: unset;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+ }
+ .modal__left,
+ .modal__right {
+  height: unset;
+  width: 100%;
+ }
+ .right__title {
+  margin-top: 0px;
+ }
+ .modal__language {
+width: 70px;
+height: 70px;
+ }
+ .close {
+  display: none;
+ }
+ .close-2 {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: white;
+  font-size: 36px;
+ }
+}
+
+@media (max-width: 608px) {
+  .left__para {
+    font-size: 12px;
   }
 }
 
@@ -788,24 +896,108 @@ transform: rotate(360deg)
   }
 }
 
+@media (max-width: 740px) {
+   .footer__link:not(:last-child) {
+    display: none;
+  }
+}
+
+@media (max-width: 724px) {
+  .project__list {
+    max-width: 600px;
+  }
+  .project__description--para {
+    font-size: 14px;
+    max-width: 400px;
+  }
+}
+
 @media (max-width: 721px) {
   .intro__title {
     font-size: 60px;
   }
 }
 
-@media (max-width: 480px) {
-    .project__description--para {
-        display: none;
-    }
-    .project__description {
-        left: 0;
-        padding: 0;
-        width: 100%;
-        text-align: center;
-    }
-    .project__description--sub-title {
-        margin-bottom: 8px;
-    }
+@media (max-width: 670px) {
+  .project__list {
+    max-width: 450px;
+  }
+  .project__description--para {
+    display: none;
+  }
+  .project__description--title {
+    font-size: 36px;
+  }
 
+  .project__description {
+    left: 50px;
+  }
+  .project__description--sub-title {
+    margin-bottom: 8px;
+  }
+  .projects__title {
+    font-size: 28px;
+  }
+  .intro__para {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 627px) {
+  .right__section h1 {
+    display: none;
+  }
+  .right__section-h1 {
+    margin-right: 0px;
+  }
+  .picture__wrapper {
+    height: 100px;
+    width: 100px;
+  }
+  .picture__frame {
+    width: 200px;
+  }
+}
+
+@media (max-width: 540px) {
+  .intro__para {
+    font-size: 13px;
+  }
+   .footer__link {
+    display: none;
+  }
+}
+
+
+
+@media (max-width: 496px) {
+  .project__list {
+    max-width: 350px;
+  }
+  .project__description--title {
+    font-size: 24px;
+  }
+  .projects__title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 440px) {
+  .intro__para {
+    display: none;
+  }
+  .picture__wrapper {
+    width: 125px;
+    height: 125px;
+  }
+  .footer__copyright {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 406px) {
+  .intro__title {
+    font-size: 50px;
+  }
+  
 }
