@@ -10,8 +10,6 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { IoIosMail } from "react-icons/io";
 
-
-
 export default function Home() {
   const [modal, setModal] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -19,7 +17,7 @@ export default function Home() {
 
   function contact(event) {
     event.preventDefault();
-    setLoading(true)
+    setLoading(true);
     emailjs
       .sendForm(
         "service_aahskhi",
@@ -29,23 +27,23 @@ export default function Home() {
       )
       .then(() => {
         setSuccess(true);
-      })
+      });
   }
 
   useEffect(() => {
-  if (modal && window.innerWidth > 834) {
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
-  } else {
-    document.documentElement.style.overflow = "auto";
-    document.body.style.overflow = "auto";
-  }
+    if (modal && window.innerWidth > 834) {
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+    } else {
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
+    }
 
-  return () => {
-    document.documentElement.style.overflow = "auto";
-    document.body.style.overflow = "auto";
-  };
-}, [modal]);
+    return () => {
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
+    };
+  }, [modal]);
 
   return (
     <>
@@ -64,19 +62,21 @@ export default function Home() {
             <Introduction />
             <Picture />
           </div>
-          <a href="#projects" class="scroll">
-            <div class="scroll__icon click"></div>
+          <a href="#projects" className="scroll">
+            <div className="scroll__icon click"></div>
           </a>
           <button className="mail__btn click" onClick={() => setModal(true)}>
-            <IoIosMail className='mail'/>
-            </button>
+            <IoIosMail className="mail" />
+          </button>
         </section>
         <section id="projects" className={`${modal && "visible"}`}>
           <h1 className="projects__title">Here are some of my projects</h1>
           <Project />
         </section>
         <section id="backToTop" className={`${modal && "visible"}`}>
-          <a href='#intro' className="toTop__title click">Back to The top</a>
+          <a href="#intro" className="toTop__title click">
+            Back to The top
+          </a>
         </section>
       </main>
       <Footer
@@ -84,8 +84,8 @@ export default function Home() {
         modal={modal}
         className={`${modal && "visible"}`}
       />
-      {modal && (
-        <div className="modal">
+      {modal &&
+        <div className={`modal ${modal ? "modal__open" : ""}`}>
           <div className={`modal__left ${modal ? "left__open" : ""}`}>
             <h1 className="left__title">Here's a bit about me.</h1>
             <h1 className="left__desc">Frontend Software Engineer</h1>
@@ -166,64 +166,72 @@ export default function Home() {
                 <span className="language__name">Vercel</span>
               </figure>
             </div>
-            <IoMdClose className='close-2 click' onClick={() => setModal(false)}/>
+            <IoMdClose
+              className="close-2 click"
+              onClick={() => setModal(false)}
+            />
           </div>
           <div className={`modal__right ${modal ? "right__open" : ""}`}>
-            {loading ?
-             <>
-             {
-              success 
-              ?
-              <div className='success__part'>
-              <IoIosCheckmarkCircle className='checkmark__icon'/>
-              <h1 className='success__message'>Hi! I’m so happy you reached out. Thanks for connecting with me! Talk soon!</h1>
-              </div>
-              :
-              <div className="loading__container">
-                <AiOutlineLoading3Quarters className='loading__icon'/>
-              </div>
-}
-             </>
-             :
+            {loading ? (
               <>
-            <h1 className="right__title">Let's Have a Chat!</h1>
-            <h1 className="right__para">
-              I'm currently open to new opportunites.
-            </h1>
-            <form id="contact__form" onSubmit={contact}>
-              <div className="form__item">
-                <input
-                  className="input"
-                  name="user_name"
-                  type="text"
-                  placeholder="Name"
-                />
-              </div>
-              <div class="form__item">
-                <input
-                  className="input"
-                  name="user_email"
-                  type="email"
-                  placeholder="Email"
-                />
-              </div>
-              <div class="form__item">
-                <textarea
-                  className="input here"
-                  name="message"
-                  type="text"
-                  placeholder="Message"
-                />
-              </div>
-              <button id="contact__submit" className="form__submit">
-                Send it my way
-              </button>
-            </form>
-            </>}
-            <IoMdClose className='close click' onClick={() => setModal(false)}/>
+                {success ? (
+                  <div className="success__part">
+                    <IoIosCheckmarkCircle className="checkmark__icon" />
+                    <h1 className="success__message">
+                      Hi! I’m so happy you reached out. Thanks for connecting
+                      with me! Talk soon!
+                    </h1>
+                  </div>
+                ) : (
+                  <div className="loading__container">
+                    <AiOutlineLoading3Quarters className="loading__icon" />
+                  </div>
+                )}
+              </>
+            ) : (
+              <>
+                <h1 className="right__title">Let's Have a Chat!</h1>
+                <h1 className="right__para">
+                  I'm currently open to new opportunites.
+                </h1>
+                <form id="contact__form" onSubmit={contact}>
+                  <div className="form__item">
+                    <input
+                      className="input"
+                      name="user_name"
+                      type="text"
+                      placeholder="Name"
+                    />
+                  </div>
+                  <div class="form__item">
+                    <input
+                      className="input"
+                      name="user_email"
+                      type="email"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div class="form__item">
+                    <textarea
+                      className="input here"
+                      name="message"
+                      type="text"
+                      placeholder="Message"
+                    />
+                  </div>
+                  <button id="contact__submit" className="form__submit">
+                    Send it my way
+                  </button>
+                </form>
+              </>
+            )}
+            <IoMdClose
+              className="close click"
+              onClick={() => setModal(false)}
+            />
           </div>
         </div>
-      )}
+}
     </>
   );
 }

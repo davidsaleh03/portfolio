@@ -27,7 +27,7 @@ const Introduction = () => {
       />
       <div className='picture__frame frame-2'>
         <figure className="picture__wrapper">
-        <img src="/facebook.jpg" alt="" />
+        <img src="/profile.png" alt="" />
         </figure>
     </div>
       <p className='intro__para' data-aos="flip-left">I am a passionate Frontend Software Engineer dedicated to crafting engaging, high-performance web applications. I focus on creating seamless user experiences by combining clean code, thoughtful design, and modern web technologies.</p>
