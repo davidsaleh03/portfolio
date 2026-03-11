@@ -1,6 +1,6 @@
 import Introduction from "@/components/Introduction";
 import { useState, useEffect } from "react";
-import Top from "@/components/top";
+import Top from "@/components/Top";
 import Picture from "@/components/Picture";
 import Project from "@/components/Project";
 import Footer from "@/components/Footer";
