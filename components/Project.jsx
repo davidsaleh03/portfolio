@@ -38,7 +38,7 @@ const Project = () => {
                   Instagram Clone Project
                 </h3>
                 <h4 className="project__description--sub-title">
-                  HTML, CSS, JavaScript, React
+                  HTML, CSS, JavaScript, React, Firebase
                 </h4>
                 <p className="project__description--para">
                   This project is a fully functional Instagram-inspired social media platform that replicates many of the core features of the original application. The goal of the project was to design and build a scalable, user-focused platform that allows users to create accounts, interact with content, and explore posts from other users in a familiar social media experience.
@@ -88,7 +88,7 @@ const Project = () => {
                   Netflix Clone Project
                 </h3>
                 <h4 className="project__description--sub-title">
-                  HTML, CSS, JavaScript, React
+                  HTML, CSS, JavaScript, React, Firebase
                 </h4>
                 <p className="project__description--para">
                   This project is a Netflix-inspired streaming platform clone designed to replicate the core user experience of a modern video streaming service. The application allows users to browse movies and shows, explore categorized content, and view detailed media information within a sleek, entertainment-focused interface.

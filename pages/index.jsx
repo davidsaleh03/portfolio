@@ -1,6 +1,7 @@
 import Introduction from "@/components/Introduction";
 import { useState, useEffect } from "react";
 import Top from "@/components/Top";
+import Internship from "@/components/Internship";
 import Picture from "@/components/Picture";
 import Project from "@/components/Project";
 import Footer from "@/components/Footer";
@@ -70,7 +71,9 @@ export default function Home() {
           </button>
         </section>
         <section id="projects" className={`${modal && "visible"}`}>
-          <h1 className="projects__title">Here are some of my projects</h1>
+          <h1 className="projects__title">Internship projects</h1>
+          <Internship />
+          <h1 className="projects__title">Personal projects</h1>
           <Project />
         </section>
         <section id="backToTop" className={`${modal && "visible"}`}>
