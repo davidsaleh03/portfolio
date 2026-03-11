@@ -461,6 +461,15 @@ width: 100%;
     justify-content: center;
 }
 
+@keyframes scroll {
+    0% {
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(-3px);
+    }
+}
+
 .scroll__icon:after {
     content: "";
     width: 4px;
