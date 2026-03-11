@@ -163,7 +163,7 @@ export default function Home() {
               <figure className="modal__language">
                 <img
                   className="modal__language--img"
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Ionicons_logo-vercel.svg/640px-Ionicons_logo-vercel.svg.png"
+                  src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Vercel-Dark.svg"
                   alt=""
                 />
                 <span className="language__name">Vercel</span>
