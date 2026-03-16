@@ -47,7 +47,7 @@ const Project = () => {
                   <a href="https://github.com/davidsaleh03/new-instagram-clone" className="project__description--link click" target="_blank">
                     <FaGithub />
                   </a>
-                  <a href="https://new-instagram-clone-lnne.vercel.app/login" className="project__description--link click" target="_blank">
+                  <a href="https://new-instagram-clone-lnne.vercel.app/" className="project__description--link click" target="_blank">
                     <FaLink />
                   </a>
                 </div>
